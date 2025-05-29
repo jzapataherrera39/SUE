@@ -1,0 +1,33 @@
+HTTrack3.49-2+htsswf+htsjava launched on Thu, 29 May 2025 11:23:02 at https://estudios.unad.edu.co/maestria-en-educacion +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "es, en, *" https://estudios.unad.edu.co/maestria-en-educacion -O1 "C:\Users\usuario\Documents\SUE CARIBE" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+11:26:15	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/alfabetizacion-primaria-y-bachillerato (from https://estudios.unad.edu.co/maestria-en-educacion)
+11:26:25	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/templates/shaper_helix3/images/helix-logo-white.png (from https://estudios.unad.edu.co/templates/shaper_helix3/css/template.css)
+11:26:25	Error: 	"Forbidden" (403) at link https://www.unad.edu.co/form-unad-principal/buscador-eventos.js (from https://estudios.unad.edu.co/)
+11:28:40	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/{{name1.web}} (from https://estudios.unad.edu.co/carreras)
+11:29:04	Warning: 	Retry after error -4 (Connect Error) at link https://portal.icetex.gov.co/Portal/images/default-source/créditos/displays/display-pregrado-dudas.jpg?sfvrsn=4 (from https://estudios.unad.edu.co/financiacion/icetex)
+11:30:33	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2025/1Guaviare.pdf (from https://estudios.unad.edu.co/proyectos-especiales)
+11:30:33	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2025/Boyaca.pdf (from https://estudios.unad.edu.co/proyectos-especiales)
+11:30:33	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2025/Casanare.pdf (from https://estudios.unad.edu.co/proyectos-especiales)
+11:30:33	Warning: 	Retry after error -4 (Connect Error) at link https://portal.icetex.gov.co/Portal/images/default-source/créditos/displays/display-pregrado-dudas.jpg?sfvrsn=4 (from https://estudios.unad.edu.co/financiacion/icetex)
+11:32:24	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2025/Acta-01-Consejo-Directivo-BOGOTA_Febrero.pdf (from https://estudios.unad.edu.co/educacion-permanente-alfabetizacion-y-primaria/actas-de-consejo-directivo-colegios-unad)
+11:32:24	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2025/Acta-01-Consejo-Directivo-DUITAMA.pdf (from https://estudios.unad.edu.co/educacion-permanente-alfabetizacion-y-primaria/actas-de-consejo-directivo-colegios-unad)
+11:32:24	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2025/Acta-01-Consejo-Directivo_PAMPLONA.pdf (from https://estudios.unad.edu.co/educacion-permanente-alfabetizacion-y-primaria/actas-de-consejo-directivo-colegios-unad)
+11:32:24	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2025/Acta-01-Consejo-Directivo-NEIVA.pdf (from https://estudios.unad.edu.co/educacion-permanente-alfabetizacion-y-primaria/actas-de-consejo-directivo-colegios-unad)
+11:32:24	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2025/Acta-02-Consejo-Directivo-NEIVA.pdf (from https://estudios.unad.edu.co/educacion-permanente-alfabetizacion-y-primaria/actas-de-consejo-directivo-colegios-unad)
+11:32:24	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2025/Acta-01-Consejo-Directivo-Pitalito.pdf (from https://estudios.unad.edu.co/educacion-permanente-alfabetizacion-y-primaria/actas-de-consejo-directivo-colegios-unad)
+11:32:24	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2025/Acta-02-Consejo-Directivo-Pitalito.pdf (from https://estudios.unad.edu.co/educacion-permanente-alfabetizacion-y-primaria/actas-de-consejo-directivo-colegios-unad)
+11:32:30	Error: 	"Connect Error" (-4) after 2 retries at link https://portal.icetex.gov.co/Portal/images/default-source/créditos/displays/display-pregrado-dudas.jpg?sfvrsn=4 (from https://estudios.unad.edu.co/financiacion/icetex)
+11:32:30	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/>https://unad.us/convenios</a>, con el fin de permitir a los estudiantes o graduados optar por el correspondiente título académico de la UNAD Colombia y de la UNAD Florida así:</p><p><strong>Acuerdos con el Plan de Innovación Curricular  Resolución No. 008579 - 25 de mayo de 2023</strong></p><ul><li><a href= (from https://estudios.unad.edu.co/plan-de-estudios-administracion-de-empresas)
+11:32:30	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2025/PEP_Programa_Ing.Electronica.pdf (from https://estudios.unad.edu.co/plan-de-estudios-ingenieria-electronica)
+11:32:34	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/2024/ACUERDO NUMERO 256 DEL 30 DE ABRIL DE 2024.pdf (from https://estudios.unad.edu.co/plan-de-estudios-maestria-en-administracion-de-organizaciones)
+11:32:34	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/images/ecbti/TecnologiaenCalidadAlimentaria/Acuerdo_Número_2157.pdf (from https://estudios.unad.edu.co/plan-de-estudios-tecnologia-en-calidad-alimentaria)
+11:32:34	Error: 	"Not Found" (404) at link https://estudios.unad.edu.co/convenios-homologaciones/164?start=20 (from https://estudios.unad.edu.co/convenios-de-homologacion-tecnologia-en-gestion-comercial-y-de-negocios?types[0]=1)
+
+HTTrack Website Copier/3.49-2 mirror complete in 9 minutes 33 seconds : 2065 links scanned, 2042 files written (487298975 bytes overall) [431568577 bytes received at 753173 bytes/sec], 71098778 bytes transferred using HTTP compression in 1445 files, ratio 20%, 19.3 requests per connection
+(20 errors, 2 warnings, 0 messages)

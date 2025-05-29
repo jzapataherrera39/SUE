@@ -1,0 +1,234 @@
+(function(){	
+var myApp = angular.module('myApp', ['ngSanitize']);
+myApp.controller('listadoCtrl', function Main($scope, $http) {
+
+
+$scope.mt2 = [
+{ periodo:"1",curso:"Cátedra Unadista",codigo:"80017",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"1",curso:"Derecho Publico",codigo:"252537011",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"1",curso:"Ética y Ciudadanía", codigo:"40001",creditos:"3",tipo:"Teórico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"1",curso:"Herramientas digitales para la gestión del conocimiento",codigo:"200610",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"1",curso:"Disciplinar Común Electivo 1",codigo:"*",creditos:"3",tipo:"Metodológico",clasificacion:"Electiva", prerrequisitos: [] },
+{ periodo:"1",curso:"Electivo Formación Complementaria 1",codigo:"*",creditos:"1",tipo:"Metodológico",clasificacion:"Electiva", prerrequisitos: [] },
+
+{ periodo:"2",curso:"Competencias Comunicativas IBC",codigo:"50010",creditos:"3",tipo:"Teórico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"2",curso:"Derecho Administrativo DE",codigo:"252537012",creditos:"2",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"2",curso:"Fundamentos y Generalidades de la Investigación",codigo:"150001",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"2",curso:"Diseño de Proyectos y TIC",codigo:"252526759",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"2",curso:"Prestación del Servicio Social Unadista: Catedra Social Solidaria y Catedra Región",codigo:"700004",creditos:"0",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"2",curso:"Disciplinar Común Electivo 2",codigo:"*",creditos:"3",tipo:"Teórico",clasificacion:"Electiva", prerrequisitos: [] },
+{ periodo:"2",curso:"IBC Electivo 1",codigo:"*",creditos:"3",tipo:"Teórico",clasificacion:"Electiva", prerrequisitos: [] },
+
+{ periodo:"3",curso:"Inglés A1",codigo:"900001",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"3",curso:"Teoria General del Proceso",codigo:"251009",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"3",curso:"Expediente Electrónico",codigo:"253001",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"3",curso:"Gestión de Proyectos y TIC",codigo:"252536760",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"3",curso:"Disciplinar específico Electivo 1",codigo:"*",creditos:"3",tipo:"Teórico",clasificacion:"Electiva", prerrequisitos: [] },
+
+{ periodo:"4",curso:"Inglés A2",codigo:"900002",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"4",curso:"Administración Pública y gestión local DE",codigo:"252010",creditos:"2",tipo:"Teórico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"4",curso:"Protección Jurídica de la Información",codigo:"253002",creditos:"3",tipo:"Teórico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"4",curso:"Gestión del Ciclo de Proyectos de Cooperación Internacional y Desarrollo",codigo:"252022",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"4",curso:"Pensamiento lógico matemático",codigo:"200611",creditos:"3",tipo:"Teórico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"4",curso:"Disciplinar específico Electivo 2",codigo:"*",creditos:"3",tipo:"Metodológico",clasificacion:"Electiva", prerrequisitos: [] },
+
+{ periodo:"5",curso:"Procedimientos Contractuales en la Era Digital",codigo:"252537014",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"5",curso:"Procedimientos Administrativos",codigo:"252537015",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"5",curso:"Mecanismos alternativos de solución de conflictos DC",codigo:"251049",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"5",curso:"Régimen jurídico de Internet",codigo:"252537016",creditos:"3",tipo:"Teórico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"5",curso:"Disciplinar específico Electivo 3",codigo:"*",creditos:"3",tipo:"Metodológico",clasificacion:"Electiva", prerrequisitos: [] },
+{ periodo:"5",curso:"Electivo Formación Complementaria 2",codigo:"*",creditos:"1",tipo:"Metodológico",clasificacion:"Electiva", prerrequisitos: [] },
+
+{ periodo:"6",curso:"Procedimientos de Seguridad Social",codigo:"252537017",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"6",curso:"Procedimientos Jurisdiccionales en TIC",codigo:"252537018",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"6",curso:"Portabilidad e interoperabilidad de la Información",codigo:"252537019",creditos:"3",tipo:"Metodológico",clasificacion:"Obligatorio", prerrequisitos: [] },
+{ periodo:"6",curso:"Disciplinar Común Electivo 3",codigo:"*",creditos:"3",tipo:"Metodológico",clasificacion:"Electiva", prerrequisitos: [] },
+{ periodo:"6",curso:"IBC Electivo 2",codigo:"*",creditos:"2",tipo:"Metodológico",clasificacion:"Electiva", prerrequisitos: [] }
+];
+
+
+$scope.curriculum = agruparPorPeriodo($scope.mt2);
+
+          // Función para reorganizar las materias por periodo
+    function agruparPorPeriodo(materias) {
+      const curriculum = {};
+      materias.forEach(materia => {
+        if (!curriculum[materia.periodo]) {
+          curriculum[materia.periodo] = [];
+        }
+        curriculum[materia.periodo].push(materia);
+      });
+      return curriculum;
+    }
+
+    // Función para calcular el total de créditos y las sumatorias de créditos Os y electivos
+      $scope.calcularTotales = function () {
+      $scope.totalCreditos = 0;
+      $scope.sumaCreditosObligatorios = 0;
+      $scope.sumaCreditosElectivos = 0;
+
+      for (const periodo in $scope.curriculum) {
+        const materias = $scope.curriculum[periodo];
+        for (const curso of materias) {
+          $scope.totalCreditos += parseInt(curso.creditos, 10);
+          if (curso.clasificacion === "Obligatorio") {
+            $scope.sumaCreditosObligatorios += parseInt(curso.creditos, 10);	
+          } else if (curso.clasificacion === "Electiva") {
+            $scope.sumaCreditosElectivos += parseInt(curso.creditos, 10);			
+          }
+        }
+      }
+    };
+   
+    $scope.calcularTotales(); // Calcular los totales al inicio
+
+    $scope.calcularCreditosPorNivel = function (nivel) {
+      let creditosTotales = 0;
+      for (const periodo in $scope.curriculum) {
+        if (nivel === 'todos' || periodo === nivel) {
+          const materias = $scope.curriculum[periodo];
+          for (const curso of materias) {
+            creditosTotales += parseInt(curso.creditos, 10);
+          }
+        }
+      }
+      return creditosTotales;
+    };
+	
+	
+//oculta lateral	
+$scope.verinfo=false;
+
+$scope.openPopup = function (curso) {
+	
+
+	
+   
+   // Establecer el fondo en blanco para todos los cursos
+    for (const periodo in $scope.curriculum) {
+        const materias = $scope.curriculum[periodo];
+        for (const materia of materias) {
+            materia.preColor = 'white';
+            materia.showArrow = false;
+        }
+    }
+
+
+    // Establecer el curso seleccionado
+    $scope.selectedCurso = curso;
+    $scope.verinfo = true;
+
+};
+
+// Función para obtener color según pre
+$scope.getColorByPre = function (preValue) {
+   const colorMap = {
+    '203008067': '#6CDF70',  
+    '203008070': '#1690E0',
+	'*': '#842e2c',  
+    
+// Colores permitidos: #d85c29 #003e60 #41839d #67b6b2 #892b7d #842e2c #e9b435 #a72e47 #1690E0 #6CDF70 #482999 #03995F
+
+};
+    return colorMap[preValue] || 'black';
+};
+
+$scope.processPrerrequisitos = function() {
+    for (const periodo in $scope.curriculum) {
+        const materias = $scope.curriculum[periodo];
+        for (const curso of materias) {
+            if (curso.prerrequisitos && curso.prerrequisitos.length > 0) {
+                curso.preColors = {}; // Initialize preColors here
+                curso.prerrequisitos.forEach(preId => {
+                    const color = $scope.getColorByPre(preId);
+                    curso.preColors[preId] = color;
+                    curso.showArrow = true; // If you still need this
+                });
+            }
+        }
+    }
+};
+
+
+$scope.processPrerrequisitos(); // Llamar a la función al inicio	
+	
+//estilo malla	  
+  
+$scope.getStyle = function(curso) {
+    var clasificacionFinal = curso.clasificacion1 || curso.clasificacion;
+
+    var styles = {
+        'border-left': clasificacionFinal === 'Obligatorio' ? '4px solid #282828' :
+                       clasificacionFinal === 'Electiva' ? '4px solid rgb(103, 182, 178)' :
+                       clasificacionFinal === 'Componente Práctico' ? '4px solid #45C045' : ''
+    };
+
+    if (clasificacionFinal === 'Electiva') {
+        styles['background-color'] = 'rgb(103, 182, 178)'; // Fondo para cursos Electiva
+    } else if (clasificacionFinal === 'Componente Práctico') {
+        styles['background-color'] = '#C8FACC'; 
+    }
+
+    if (curso === $scope.selectedCurso) {
+        styles['background-color'] = '#bcbebf'; // Fondo negro
+        styles['color'] = '#333'; // Letras blancas
+    }
+
+    return styles;
+};
+
+
+//Electivo Formación Complementaria
+$scope.bas01 = '<p class="lateral1">Electivo Formación Complementaria</p>'+
+'<ul>'+
+'<li >Acondicionamiento fisico y bienestar	 - <strong>Código: </strong>400004 - <strong>Créditos: </strong>1</li>' +
+'<li >Teatro - <strong>Código: </strong> 80010 - <strong>Créditos: </strong>1</li>' +
+'<li >Oralidad - <strong>Código: </strong> 252032 - <strong>Créditos: </strong>1</li>'+
+'<li >Guitarra - <strong>Código: </strong> 80005 - <strong>Créditos: </strong>1</li>'+
+'<li >Protocolo - <strong>Código: </strong> 80007 - <strong>Créditos: </strong>1</li>'+
+'</ul>'+
+'<hr>' +
+'<p><strong>Nota: </strong>  Durante toda la carrera debe matricular dos (2) cursos de estos.</p>';
+
+//Electivo Formación Disciplinar Común Electivo
+$scope.bas02 = '<p class="lateral1">Electivo Formación Disciplinar Común Electivo</p>'+
+'<ul>'+
+'<li >Derechos Humanos - <strong>Código: </strong>251008 - <strong>Créditos: </strong>2</li>' +
+'<li >Introducción a la Ciencia Política - <strong>Código: </strong>252001 - <strong>Créditos: </strong>3</li>' +
+'<li >Fundamentos de Economia - <strong>Código: </strong>252004 - <strong>Créditos: </strong>3</li>' +
+'<li >Government and Democracy - <strong>Código: </strong> 450092 - <strong>Créditos: </strong>3</li>' +
+'<li >Derecho  Internacional Humanitario - <strong>Código: </strong> 251034 - <strong>Créditos: </strong>3</li>'+
+'</ul>'+
+'<hr>' +
+'<p><strong>Nota: </strong>  Durante toda la carrera debe matricular nueve (9) créditos de estos.</p>';
+
+//Electivo Formación IBC
+$scope.bas03 = '<p class="lateral1">Electivo Formación IBC</p>'+
+'<ul>'+
+'<li >Sostenibilidad, Desarrollo y Calidad de Vida - <strong>Código: </strong>40006 - <strong>Créditos: </strong>3</li>' +
+'<li >Inclusión social - <strong>Código: </strong> 40004 - <strong>Créditos: </strong>3</li>' +
+'<li >Sujeto, comunidad e interacción social - <strong>Código: </strong> 40005 - <strong>Créditos: </strong>3</li>'+
+'<li >Fundamentos en Gestión Integral - <strong>Código: </strong> 112001 - <strong>Créditos: </strong>3</li>'+
+'</ul>'+
+'<hr>' +
+'<p><strong>Nota: </strong>  Durante toda la carrera debe matricular dos (2) cursos de estos.</p>';						
+
+//Componente de formación disciplinar específico Electivos
+$scope.bas04 = '<p class="lateral1">Componente de formación disciplinar específico Electivos</p>'+
+'<ul>'+
+'<li >Sujetos de Derecho - <strong>Código: </strong>252517815 - <strong>Créditos: </strong>3</li>' +
+'<li >Protección al Consumidor - <strong>Código: </strong>252537810 - <strong>Créditos: </strong>3</li>' +
+'<li >Derecho Constitucional General - <strong>Código: </strong>251004 - <strong>Créditos: </strong>3</li>' +
+'<li >Acciones Constitucionales - <strong>Código: </strong> 252537675 - <strong>Créditos: </strong>3</li>' +
+'<li >Historias de las Ideas Políticas - <strong>Código: </strong> 252002 - <strong>Créditos: </strong>3</li>'+
+'<li >Delitos Informáticos - <strong>Código: </strong> 252537809 - <strong>Créditos: </strong>3</li>'+
+'<li >Teoría del Estado - <strong>Código: </strong> 252003 - <strong>Créditos: </strong>3</li>'+
+'<li >Historia y Teoría de las Relaciones Internacionales - <strong>Código: </strong> 252005 - <strong>Créditos: </strong>3</li>'+
+'</ul>'+
+'<hr>' +
+'<p><strong>Nota: </strong>  Durante toda la carrera debe matricular tres (3) cursos de estos.</p>';
+
+  
+});
+
+})();
